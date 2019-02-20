@@ -1,17 +1,8 @@
-install.packages("lme4")
+
+dddd <- read.csv("/Users/zsarsenbayev/Desktop/2019-master-class/circles_cold_chamber.csv", header = T)
 library(lme4)
 model4 <- lmer(Time.ms. ~ ActiveFingerTemp + Condition + IconCenterX + IconCenterY + (1|Participant), data = dddd, REML=FALSE)
 summary(model4)
 
-model5 <- lmer(Time.ms. ~ ActiveFingerTemp * Condition * IconCenterX * IconCenterY + (1|Participant), data = dddd, REML=FALSE)
-summary(model5)
-
-
-
-
-
-# how to interpret mixed effect models
-null_model <- lmer(Time.ms. ~  (1|Participant), data = dddd, REML=FALSE)
-modelX <- lmer(Time.ms. ~ ActiveFingerTemp + (1|Participant), data = dddd, REML=FALSE)
-
-anova(null_model, modelX)
+model41 <- lmer(Time.ms. ~  (1|Participant), data = dddd, REML=FALSE)
+anova(model4, model41)
