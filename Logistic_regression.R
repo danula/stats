@@ -1,4 +1,4 @@
-ccc <- read.csv("/Users/zsarsenbayev/Desktop/2019-master-class/repo/train.csv", header = T)
+ccc <- read.csv("train.csv", header = T)
 cccc <- subset(ccc,select=c(2,3,5,6,7,8,10,12))
 cccc$Age[is.na(cccc$Age)] <- mean(cccc$Age,na.rm=T)
 
